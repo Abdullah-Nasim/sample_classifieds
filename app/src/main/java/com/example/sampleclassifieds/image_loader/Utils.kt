@@ -54,8 +54,7 @@ object Utils {
         }
     }
 
-    // From Developer Site
-    private fun calculateInSampleSize(options: BitmapFactory.Options, reqWidth: Int, reqHeight: Int): Int {
+    fun calculateInSampleSize(options: BitmapFactory.Options, reqWidth: Int, reqHeight: Int): Int {
 
         val (height: Int, width: Int) = options.run { outHeight to outWidth }
         var inSampleSize = 1
