@@ -5,6 +5,9 @@ import com.example.sampleclassifieds.network.apis.Endpoints
 import retrofit2.Call
 import retrofit2.http.GET
 
+/**
+ * An interface for network API calls.
+ */
 interface ServicesInterface {
 
     @GET(Endpoints.DYNA_MOB_WRITER)

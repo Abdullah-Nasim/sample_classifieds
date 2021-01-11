@@ -3,4 +3,6 @@
     <string name="name">Name:</string>
     <string name="price">Price:</string>
     <string name="created_at">Created at:</string>
+    <string name="no_of_thumbnails_available">No. of thumbnails Available:</string>
+    <string name="no_of_pictures_available">No. of pictures Available:</string>
 </resources>

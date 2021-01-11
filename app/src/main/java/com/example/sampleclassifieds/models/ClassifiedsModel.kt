@@ -5,6 +5,11 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+/**
+ * This class is responsible for fetching new classifieds from the server/database.
+ * This class is also responsible to decide that from where to fetch the classified.
+ * That can be a server or local database.
+ */
 class ClassifiedsModel{
 
     private val classifiedsList: List<Result> = listOf()
@@ -37,6 +42,9 @@ class ClassifiedsModel{
         val uid: String
     )
 
+    /**
+     * An interface for classifieds fetch callback.
+     */
     interface ClassifiedsResult{
         fun onClassifiedsFetched(classifiedsList: List<Result>)
     }

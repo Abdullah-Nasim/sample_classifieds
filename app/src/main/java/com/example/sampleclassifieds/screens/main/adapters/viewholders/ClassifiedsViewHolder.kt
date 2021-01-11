@@ -1,4 +1,4 @@
-package com.example.sampleclassifieds.screens.adapters.viewholders
+package com.example.sampleclassifieds.screens.main.adapters.viewholders
 
 import android.view.View
 import android.widget.ImageView

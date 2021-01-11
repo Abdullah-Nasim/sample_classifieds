@@ -10,6 +10,9 @@ import org.junit.Assert.*
 
 @RunWith(AndroidJUnit4::class)
 
+/**
+ * This test is to validate the API response.
+ */
 class APITest {
 
     @Test

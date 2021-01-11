@@ -1,4 +1,4 @@
-package com.example.sampleclassifieds.screens
+package com.example.sampleclassifieds.screens.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,12 +6,18 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sampleclassifieds.R
 import com.example.sampleclassifieds.models.ClassifiedsModel
-import com.example.sampleclassifieds.screens.adapters.ClassifiedsRecyclerAdapter
+import com.example.sampleclassifieds.screens.main.adapters.ClassifiedsRecyclerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), MainInterface {
+/**
+ * The Main Activity features the list of classifieds from the API.
+ * This class contains the implementation of recycler view which follows linear layout structure to display classifieds.
+ */
+class MainActivity : AppCompatActivity(),
+    MainInterface {
 
-    private val mainPresenter = MainPresenter(this)
+    private val mainPresenter =
+        MainPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -10,6 +10,9 @@ import java.io.ByteArrayOutputStream
 import java.net.URL
 import java.util.concurrent.ThreadFactory
 
+/**
+ * This object features utils for our ImageLoader class
+ */
 object Utils {
 
     internal class ImageThreadFactory : ThreadFactory {

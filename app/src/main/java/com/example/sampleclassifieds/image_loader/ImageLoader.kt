@@ -10,6 +10,9 @@ import java.util.Collections.synchronizedMap
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
+/**
+ * This class features the implementation of custom ImageLoader
+ */
 class ImageLoader (context: Context)  {
 
     private val maxCacheSize: Int = (Runtime.getRuntime().maxMemory() / 1024).toInt()/8
