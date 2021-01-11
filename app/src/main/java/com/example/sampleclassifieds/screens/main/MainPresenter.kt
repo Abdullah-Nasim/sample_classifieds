@@ -1,7 +1,6 @@
 package com.example.sampleclassifieds.screens.main
 
 import com.example.sampleclassifieds.models.ClassifiedsModel
-import com.example.sampleclassifieds.screens.main.MainInterface
 
 /**
  * This is a presenter class for our MainActivity.
@@ -15,9 +14,11 @@ class MainPresenter(val mainInterface: MainInterface){
 
         classifiedsModel.getClassifieds(object : ClassifiedsModel.ClassifiedsResult{
             override fun onClassifiedsFetched(classifiedsList: List<ClassifiedsModel.Result>) {
-
                 mainInterface.fetchingClassifiedsComplete(classifiedsList)
+            }
 
+            override fun onClassifiedFetchFailed(msg: String) {
+                mainInterface.fetchingClassifiedsFailed(msg)
             }
         })
 

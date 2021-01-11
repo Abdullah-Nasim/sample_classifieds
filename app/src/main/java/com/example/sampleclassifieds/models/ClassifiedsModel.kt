@@ -4,6 +4,7 @@ import com.example.sampleclassifieds.network.RestClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.IOException
 
 /**
  * This class is responsible for fetching new classifieds from the server/database.
@@ -19,7 +20,13 @@ class ClassifiedsModel{
         if(classifiedsList.isEmpty()){
             RestClient.adapter.getClassifieds().enqueue(object : Callback<Classified>{
 
-                override fun onFailure(call: Call<Classified>, t: Throwable) {}
+                override fun onFailure(call: Call<Classified>, t: Throwable) {
+                    if(t is IOException){
+                        classifiedsResult.onClassifiedFetchFailed("Your internet dose'nt seems to be working!")
+                    } else {
+                        classifiedsResult.onClassifiedFetchFailed("Something is not working fine. Please try again later!")
+                    }
+                }
 
                 override fun onResponse(call: Call<Classified>, response: Response<Classified>) {
                     classifiedsResult.onClassifiedsFetched(response.body()!!.results)
@@ -47,6 +54,7 @@ class ClassifiedsModel{
      */
     interface ClassifiedsResult{
         fun onClassifiedsFetched(classifiedsList: List<Result>)
+        fun onClassifiedFetchFailed(msg: String)
     }
 
 }
